@@ -13,3 +13,12 @@ published: false
 まずは必要なパッケージを読み込みます。
 ```r
 library(tidyverse)
+ダミーデータの作成
+分析用のサンプルデータを作成します。
+
+R
+df <- data.frame(
+  Skill = c("Grammar", "Vocabulary", "Reading", "Listening"),
+  Score = c(85, 70, 90, 65)
+)
+可視化の実践
