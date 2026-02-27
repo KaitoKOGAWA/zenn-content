@@ -14,3 +14,22 @@ published: false
 
 ```r
 library(tidyverse)
+```
+# ダミーデータの作成
+分析用のダミーデータを作成します。
+```r
+df <- data.frame(
+  Skill = c("Grammar", "Vocabulary", "Reading", "Listening"),
+  Score = c(85, 70, 90, 65)
+)
+```
+# 可視化の実施
+ggplot2を使用して、棒グラフを作成します。
+```r
+ggplot(df, aes(x = Skill, y = Score, fill = Skill)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  labs(title = "Diagnostic Test Profile")
+```
+# おわりに
+このように、Rを活用することで評価業務の効率化が可能です。
