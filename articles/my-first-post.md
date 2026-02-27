@@ -21,16 +21,16 @@ ggplot(df, aes(x = Skill, y = Score, fill = Skill)) +
   geom_bar(stat = "identity") +
   theme_minimal() +
   labs(title = "Diagnostic Test Profile")
-3.  **保存する**
+# 保存する
     * 右上の緑色の **「Commit changes...」** を押し、再度 **「Commit changes」** を押します。
 
 ---
 
-### **【根拠】**
+# 根拠
 * **Front Matterのルール**: Zennでは冒頭の `---` で囲まれた部分に「タイトル」や「公開設定」を書くルールがあります。ここに余計な文章（私の行動提案など）が入ると、システムが混乱して記事を表示できません。
 * **コードブロック**: ` ```r ` で囲むことで、Zenn上でコードが色付きで綺麗に表示されます。
 
 ---
 
-**【行動の提案】**
+# 行動の提案
 この修正をして保存し直せば、今度こそ[Zennの「記事の管理」ページ](https://zenn.dev/dashboard/articles)に正しいタイトルで「下書き」が出現します。
