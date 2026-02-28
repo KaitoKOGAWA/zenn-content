@@ -3,7 +3,7 @@ title: "【校務効率化】クラス全員のスピーキングテストの結
 emoji: "📊"
 type: "tech"
 topics: ["googleappsscript", "教育", "英語教育", "スプレッドシート", "DX"]
-published: false
+published: ture
 ---
 
 
