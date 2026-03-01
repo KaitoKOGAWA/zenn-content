@@ -3,7 +3,7 @@ title: "【R言語】印刷がラク！スピーキング評価のPDF一括生�
 emoji: "🖨️"
 type: "tech"
 topics: ["r", "教育", "英語教育", "github", "データ分析"]
-published: false
+published: true
 ---
 
 ## はじめに
@@ -13,6 +13,8 @@ published: false
 前回の記事では、Google Apps Script（GAS）を用いた手法を紹介しました。GASは「対面での即時共有」には非常に強力ですが、**数十人分のレポートを一括で印刷・配布したい場合**、Rを用いたPDF生成の方が圧倒的に効率的です。
 
 今回は、Rを使って**生徒全員分のレポートを1つのPDFファイルにまとめる**ツールを公開します。
+
+※本記事は、すでにPCにRおよびRStudioがインストールされていることを前提としています。
 
 ### 1. コードとサンプルデータ（GitHub）
 
@@ -32,7 +34,7 @@ published: false
 
 よろしければ、以下のデモデータを用いて試してみてください。
 
-👉 **[https://github.com/KaitoKOGAWA/zenn-content/blob/main/articles/speaking_score_demodata.csv]
+👉 **https://github.com/KaitoKOGAWA/zenn-content/blob/main/articles/speaking_score_demodata.csv**
 
 
 ### 3. Rスクリプト
