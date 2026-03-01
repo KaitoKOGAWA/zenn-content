@@ -95,3 +95,4 @@ for (i in 1:nrow(data)) {
   text(0.5, 0.55, paste(strwrap(comment_text, width = 40), collapse = "\n"), cex = 1.0, adj = c(0.5, 1))
 }
 dev.off()
+```
