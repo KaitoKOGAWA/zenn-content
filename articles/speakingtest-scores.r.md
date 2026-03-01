@@ -31,7 +31,9 @@ published: false
 | 石井 拓海 | 5 | 5 | 4 | 全体的に高い水準です。より洗練された語彙を... |
 
 よろしければ、以下のデモデータを用いて試してみてください。
-speaking_score_demodata.csv
+
+👉 **[https://github.com/KaitoKOGAWA/zenn-content/blob/main/articles/speaking_score_demodata.csv]
+
 
 ### 3. Rスクリプト
 
