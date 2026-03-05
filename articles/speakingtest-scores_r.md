@@ -20,7 +20,7 @@ published: true
 
 スクリプトと、動作確認用のサンプルデータはGitHubに公開しています。
 
-👉 **https://github.com/KaitoKOGAWA/zenn-content/edit/main/articles/speakingtest-scores.r.md**
+👉 **https://github.com/KaitoKOGAWA/speakingtest_demodata**
 
 ### 2. 準備するデータ構造
 
