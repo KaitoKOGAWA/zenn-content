@@ -4,7 +4,7 @@
 スピーキングテストにおいて、「どの単語が、どの学力層の生徒に定着しているか」を瞬時に可視化する分析ツールを開発・公開しました。
 本記事では、プログラミング知識ゼロの方でも、すぐに現場で使える本ツールの利用手順を丁寧に解説します。
 
-## 1. なぜ「学力層別」の分析が必要なのか？（SLAの視点）
+## 1. なぜ「学力層別」の分析が必要なのか？
 
 現場のスピーキング評価において、**「クラス全体の平均点」だけを見ていても、指導改善に向けた具体的な示唆は得られません。**
 特に、学習者が授業で導入された語彙を、単なる理解にとどまらず「発信語彙（Productive Vocabulary）」として内面化できているかは、多くの先生方が直面する課題であると感じます。
@@ -50,43 +50,30 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>3グループ・分析ツール（カラー改良版）</title>
+    <title>3グループ・定着度分析ツール</title>
     <style>
-        /* 全体の背景色とフォント設定 */
         body { font-family: sans-serif; background: #f0f2f5; padding: 20px; font-size: 14px; }
         .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         h1 { color: #1a73e8; border-bottom: 3px solid #1a73e8; padding-bottom: 10px; margin-bottom: 25px; }
-        
-        /* 入力エリアの設定 */
         .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
         textarea { width: 100%; height: 120px; padding: 12px; border: 1px solid #bdc3c7; border-radius: 8px; box-sizing: border-box; font-size: 14px; }
         #classText { height: 250px; }
         button { width: 100%; padding: 18px; background: #1a73e8; color: white; border: none; font-size: 1.2rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.2s; }
-        button:hover { background: #1557b0; }
-        
-        /* 上部サマリーカードの配色設定 */
-        .group-summary { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin: 20px 0; }
-        .group-card { padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; border-bottom: 4px solid rgba(0,0,0,0.1); }
+        .group-summary { display: flex; gap: 10px; margin: 20px 0; }
+        .group-card { flex: 1; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold; border-bottom: 4px solid rgba(0,0,0,0.2); }
         .card-all  { background: #e8f0fe; color: #1a73e8; }
-        .card-high { background: #fff9c4; color: #856404; } /* ゴールド */
-        .card-mid  { background: #f5f5f5; color: #616161; } /* シルバー */
-        .card-low  { background: #efebe9; color: #5d4037; } /* ブロンズ */
+        .card-high { background: #fff9c4; color: #856404; }
+        .card-mid  { background: #f5f5f5; color: #616161; }
+        .card-low  { background: #efebe9; color: #5d4037; }
         .group-name { font-size: 0.85em; display: block; margin-bottom: 5px; opacity: 0.8; }
         .group-num { font-size: 1.4em; }
-
-        /* テーブルのデザイン設定 */
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #eee; padding: 12px; text-align: center; }
-        
-        /* 表の見出し配色（カードと連動） */
         .th-overall { background: #e8f0fe !important; }
         .th-high { background: #fff9c4 !important; color: #856404; }
         .th-mid  { background: #f5f5f5 !important; color: #616161; }
         .th-low  { background: #efebe9 !important; color: #5d4037; }
-        
         .word-cell { text-align: left; font-weight: bold; color: #2c3e50; }
-        
-        /* 判定ラベルの配色 */
         .sign-good { color: #2ecc71; font-weight: bold; }
         .sign-gap  { color: #d4a017; font-weight: bold; background: #fffde7; }
         .sign-bad  { color: #e74c3c; font-weight: bold; }
@@ -96,18 +83,16 @@
 
 <div class="container">
     <h1>📊 上中下3グループ・定着度分析</h1>
-    
     <div class="input-grid">
         <div>
-            <label><strong>【理想の要約】</strong></label>
-            <textarea id="idealText" placeholder="先生が求めるキーワードを含む英文を入力..."></textarea>
+            <label><strong>【評価ターゲット語彙・フレーズ（カンマ区切り）】</strong></label>
+            <textarea id="targetWordsInput" placeholder="例: target word, key phrase, important vocabulary"></textarea>
         </div>
         <div>
             <label><strong>【スコア付き生徒データ】</strong></label>
-            <textarea id="classText" placeholder="4, Speech... (スコアと本文をカンマで区切って入力)"></textarea>
+            <textarea id="classText" placeholder="4, 生徒の発話テキストを入力...&#10;3, 次の生徒の発話テキストを入力...&#10;（※スコアと本文をカンマで区切って入力してください）"></textarea>
         </div>
     </div>
-
     <button onclick="threeGroupAnalysis()">分析を実行</button>
 
     <div id="resultArea" style="display:none;">
@@ -117,12 +102,11 @@
             <div class="group-card card-mid"><span class="group-name">中位層 (Middle)</span><span id="numMid" class="group-num">-</span></div>
             <div class="group-card card-low"><span class="group-name">下位層 (Low)</span><span id="numLow" class="group-num">-</span></div>
         </div>
-
         <table>
             <thead>
                 <tr>
                     <th>判定</th>
-                    <th>重要単語</th>
+                    <th>重要単語・フレーズ</th>
                     <th class="th-overall">全体</th>
                     <th class="th-high">上位層</th>
                     <th class="th-mid">中位層</th>
@@ -137,46 +121,55 @@
 
 <script>
 function threeGroupAnalysis() {
-    const idealInput = document.getElementById('idealText').value.trim();
+    const wordsInput = document.getElementById('targetWordsInput').value.trim();
     const classInput = document.getElementById('classText').value.trim();
-    if(!idealInput || !classInput) return alert("入力してください");
+    if(!wordsInput || !classInput) return alert("ターゲット語彙と生徒データを入力してください");
 
-    const targetWords = [...new Set(tokenize(idealInput))].filter(w => w.length >= 4);
-    const studentEntries = classInput.split(/\n\s*\n/).filter(t => t.trim().length > 0);
+    // カンマ区切りで抽出し、記号を除去して整形（チャンク対応）
+    const targetWords = [...new Set(wordsInput.toLowerCase().split(',').map(w => {
+        return w.replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+    }).filter(w => w.length > 0))];
+
+    // 改行および「数字+カンマ」のパターンで生徒ごとのデータに分割
+    let studentEntries = classInput.split(/\n(?=\d+,)/);
+    if (studentEntries.length <= 1) {
+        studentEntries = classInput.split(/\n\s*\n/);
+    }
     
-    const students = studentEntries.map(entry => {
+    const students = studentEntries.filter(t => t.trim().length > 0).map(entry => {
         const firstComma = entry.indexOf(',');
         const score = parseInt(entry.substring(0, firstComma)) || 0;
         const speech = entry.substring(firstComma + 1);
-        return { words: tokenize(speech), score: score };
+        
+        // 発話を丸ごと正規化し、前後にスペースを挿入
+        // 別の単語の一部（例: "pineapple" の中の "apple"）で部分一致してしまう誤検知を防ぐため
+        const normalizedText = " " + speech.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim() + " ";
+        return { text: normalizedText, score: score };
     });
 
-    // スコア順にソート
-    students.sort((a, b) => b.score - a.score);
-    
-    // 安定版の人数分割ロジック
     const total = students.length;
-    const third = Math.floor(total / 3);
-    const remainder = total % 3;
-
-    // 余りを中位層に寄せるように調整（安定版ロジック）
-    let highEnd = third;
-    let midEnd = highEnd + third + remainder;
-
-    const highGroup = students.slice(0, highEnd);
-    const midGroup = students.slice(highEnd, midEnd);
-    const lowGroup = students.slice(midEnd);
-
-    if (highGroup.length === 0 || lowGroup.length === 0) {
-        alert("生徒数が少なすぎるため、正常にグループ分けできません。3名以上で入力してください。");
+    if (total < 3) {
+        alert("生徒数が少なすぎます（現在: " + total + "名）。各グループに1名以上必要なので、3名以上のデータを入力してください。");
         return;
     }
 
+    // スコア降順でソート
+    students.sort((a, b) => b.score - a.score);
+    const sizeHigh = Math.floor(total / 3);
+    const sizeLow = Math.floor(total / 3);
+    const sizeMid = total - (sizeHigh + sizeLow);
+
+    const highGroup = students.slice(0, sizeHigh);
+    const midGroup = students.slice(sizeHigh, sizeHigh + sizeMid);
+    const lowGroup = students.slice(sizeHigh + sizeMid);
+
     let html = "";
     targetWords.forEach(word => {
-        const calc = (grp) => grp.length === 0 ? 0 : Math.round((grp.filter(s => s.words.includes(word)).length / grp.length) * 100);
+        // 検索対象の前後にもスペースを入れて完全一致検索を行う
+        const searchStr = " " + word + " ";
         
-        const rTotal = Math.round((students.filter(s => s.words.includes(word)).length / total) * 100);
+        const calc = (grp) => grp.length === 0 ? 0 : Math.round((grp.filter(s => s.text.includes(searchStr)).length / grp.length) * 100);
+        const rTotal = Math.round((students.filter(s => s.text.includes(searchStr)).length / total) * 100);
         const rHigh = calc(highGroup);
         const rMid = calc(midGroup);
         const rLow = calc(lowGroup);
@@ -184,14 +177,11 @@ function threeGroupAnalysis() {
         let sign = "-";
         let adv = "定着の途上";
         let cellCls = "";
-
-        if (rTotal >= 75) {
-            sign = "✅定着済"; adv = "全員が習得"; cellCls = "sign-good";
-        } else if (rHigh - rLow >= 40) {
-            sign = "⚠️格差あり"; adv = "上位のみ使用"; cellCls = "sign-gap";
-        } else if (rTotal < 30) {
-            sign = "❌未定着"; adv = "全体に再指導"; cellCls = "sign-bad";
-        }
+        
+        // 判定ロジック
+        if (rTotal >= 75) { sign = "✅定着済"; adv = "全員が習得"; cellCls = "sign-good"; }
+        else if (rHigh - rLow >= 40) { sign = "⚠️格差あり"; adv = "上位のみ使用"; cellCls = "sign-gap"; }
+        else if (rTotal < 30) { sign = "❌未定着"; adv = "全体に再指導"; cellCls = "sign-bad"; }
 
         html += `<tr class="${cellCls === 'sign-gap' ? 'sign-gap' : ''}">
             <td class="${cellCls}">${sign}</td>
@@ -204,6 +194,7 @@ function threeGroupAnalysis() {
         </tr>`;
     });
 
+    // 画面への描画処理
     document.getElementById('numTotal').innerText = total + "名";
     document.getElementById('numHigh').innerText = highGroup.length + "名";
     document.getElementById('numMid').innerText = midGroup.length + "名";
@@ -211,34 +202,34 @@ function threeGroupAnalysis() {
     document.getElementById('resultBody').innerHTML = html;
     document.getElementById('resultArea').style.display = 'block';
 }
-
-function tokenize(text) {
-    return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 0);
-}
 </script>
+</body>
+</html>
 ```
+
+保存したファイルを開くと下の画面が出てくると思います。
+
+
+<img width="960" height="438" alt="image" src="https://github.com/user-attachments/assets/ad59c09f-7ceb-4742-ac89-180aec4e08db" />
+
 #### データの入力
 ツールが開いたら、以下の2箇所に入力します。
 
-【理想の要約】
+【評価ターゲット語彙・フレーズ（カンマ区切り）】
 
-生徒に必ず使ってほしいキーワードを含む、模範となる英文を入力します。
+生徒に必ず使ってほしい単語やフレーズを入力します。
 
-例: The main character visited a small village to find the secret treasure.
 
 【スコア付き生徒データ】
 
-生徒ごとの「ルーブリック等でつけたスコア」と「実際のリテリング用テキスト」をカンマ（,）で区切って入力します。改行して複数人分を入力してください。
+生徒ごとの「ルーブリック等でつけたスコア」と「実際のリテリング用テキスト」をカンマ（,）で区切って入力します。複数人分を入力してください。
 
-例:
-4, The character went to a village and found a treasure.
-2, He visited a small town.
 
 #### 💡 すぐに試せる！練習用サンプルデータ
 ご自身の手元にデータがない場合は、以下のサンプルデータ（約40名分の1クラスを想定）をコピーして、ツールの動作を体験してみてください。
 
 **①【評価ターゲット語彙・フレーズ（カンマ区切り）】に入力するテキスト**
-以下の英文をコピーして貼り付けてください。
+以下をコピーして貼り付けてください。
 ```text
 Environmental issues, serious, waste, dangerous, sea animals, reduce, generation
 ```
