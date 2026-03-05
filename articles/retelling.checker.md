@@ -40,7 +40,7 @@
 
 1. 以下のコード右上の「コピー」ボタンを押します。
 2. PCの「メモ帳」などを開き、ペーストします。
-3. ファイル名を `Retelling_Checker.html` として保存します。
+3. ファイル名を `Speaking_Vocabulary_Checker.html` として保存します。
 
 ⚠️デフォルトだと.txtファイルで保存されてしまうため、かならず.htmlファイルに保存する際に書き換えてください。
 
@@ -286,6 +286,7 @@ environmental, serious, waste, dangerous, sea animals, reduce, generation, ocean
 
 
 <img width="907" height="452" alt="image" src="https://github.com/user-attachments/assets/18edd9e8-f8f0-4ab7-a655-3ea2793c7814" />
+
 
 
 
