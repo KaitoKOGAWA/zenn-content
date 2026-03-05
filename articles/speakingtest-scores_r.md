@@ -32,9 +32,9 @@ published: true
 | 阿部 舞 | 3 | 4 | 4 | 文法や単語の幅を広げる練習をすると... |
 | 石井 拓海 | 5 | 5 | 4 | 全体的に高い水準です。より洗練された語彙を... |
 
-よろしければ、以下のデモデータを用いて試してみてください。
+よろしければ、Githubで公開しているcsvファイルのデモデータを用いて試してみてください。
 
-👉 **https://github.com/KaitoKOGAWA/zenn-content/blob/main/articles/speaking_score_demodata.csv**
+👉 **https://github.com/KaitoKOGAWA/speakingtest_demodata**
 
 
 ### 3. Rスクリプト
