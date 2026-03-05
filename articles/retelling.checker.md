@@ -33,7 +33,7 @@
 
 ### 方法A：Web上でそのまま使う（推奨）
 私が管理するGitHub Pagesにてツールを公開しています。以下のリンクをクリックするだけで、スマートフォンやPCのブラウザからすぐにご利用いただけます。
-* **https://github.com/KaitoKOGAWA/zenn-content/edit/main/articles/retelling.checker.md**
+* **https://github.com/KaitoKOGAWA/speaking_vocabulary_chcker**
 
 ### 方法B：コードをコピペして手元（オフライン）で使う
 学校のネットワーク制限等でWeb版にアクセスできない場合は、以下の手順でご自身のPCに保存して使用できます。
