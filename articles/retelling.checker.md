@@ -230,10 +230,10 @@ function tokenize(text) {
 #### 💡 すぐに試せる！練習用サンプルデータ
 ご自身の手元にデータがない場合は、以下のサンプルデータ（約40名分の1クラスを想定）をコピーして、ツールの動作を体験してみてください。
 
-**①【理想の要約】に入力するテキスト**
+**①【評価ターゲット語彙・フレーズ（カンマ区切り）】に入力するテキスト**
 以下の英文をコピーして貼り付けてください。
 ```text
-Environmental issues are serious. Plastic waste flows into the ocean and it is dangerous for sea animals. We must reduce plastic bags and bottles to protect the environment for the next generation.
+Environmental issues, serious, waste, dangerous, sea animals, reduce, generation
 ```
 **②【スコア付き生徒データ】に入力するテキスト**
 以下のデータをすべてコピーして貼り付けてください（ルーブリック評価4〜1点のダミーデータです）。
