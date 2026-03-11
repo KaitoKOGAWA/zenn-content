@@ -148,7 +148,7 @@ if __name__ == "__main__":
 以下のGitHubリンクからダウンロードして、次の「Step 3」でアップロードしてみてください。
 
 
-にアクセスする。
+**https://github.com/KaitoKOGAWA/speaking_transcription_demodata/blob/main/Student_Audio_Files.zip**にアクセスする。
 
 画面右側にある**「Download raw file」アイコン（↓マーク）**をクリックして、パソコンに保存する。
 
