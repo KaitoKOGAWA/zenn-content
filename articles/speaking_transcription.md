@@ -3,7 +3,7 @@ title: "【Python】音声を一括文字起こし！Whisper×Colabで1つのWor
 emoji: "🎙️"
 type: "tech"
 topics: ["python", "whisper", "教育", "英語教育", "データ分析"]
-published: true
+published: false
 ---
 
 ## はじめに
