@@ -347,9 +347,12 @@ Hello, everyone. Um, today I want to talk about our school festival. We have a l
 #### 実際にどんなものができる？
 こちらに実際に出来た音声ファイルを載せました。ぜひ聞いてみてください。
 設定は、
-音声→「us アメリカ（男性）-Microsoft[Microsoft製]」
-読み上げスピード→上級
-背景の雑音（環境音）→「騒がしい高校の教室.mp3」（効果音ラボより）
+
+**音声→「us アメリカ（男性）-Microsoft[Microsoft製]」**
+
+**読み上げスピード→上級**
+
+**背景の雑音（環境音）→「騒がしい高校の教室.mp3」（効果音ラボより）**
 
 
 ## まとめ
