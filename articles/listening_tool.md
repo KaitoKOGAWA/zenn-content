@@ -15,8 +15,6 @@ um や well など、「フィラー」を入力するだけで、AIがリアル
 Tips: > リスニング試験の選択肢文など、淀みなく提示したい場合は、本来の英文法で必要なカンマであっても、あえて「**削除**」して入力するのがコツです。
 
 
-
-
 ② **発話速度の最適化**
 「初級」から「超上級」まで、ボタンひとつでリスニング評価に最適な発話速度を調整可能です。
 
@@ -34,7 +32,6 @@ Tips: > リスニング試験の選択肢文など、淀みなく提示したい
 ③保存したファイルをブラウザ（Google Chrome推奨）で開けば、即座に使用可能です。
 
 ```
-HTML
 <!DOCTYPE html><html lang="ja"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -319,3 +316,33 @@ HTML
     }</script></body></html>
 ```
 
+完成した.htmlファイルを開くと、このような画面が出てくると思います。
+
+
+
+#### 練習用テキスト
+ツールの動作確認のために、よろしければ以下のテキストをコピペしてお使いください。
+```
+Hello, everyone. Um, today I want to talk about our school festival. We have a lot of ideas, but, well, we haven't decided what to do yet. I was thinking about a cafe, but, you know, it might be too much work. Uh, maybe we can do a haunted house instead. It's, like, really popular every year. Umm, but we need a lot of materials for that. Actually, I have some cardboard boxes at home. So, I mean, we just need to buy some paint. Let me see, what else do we need?
+```
+
+
+#### 発話速度と英語の選択
+汎用性の高さを目指し、発話速度は初級者向けのゆっくりとしてものから超上級者向けの比較的速いものまで準備しました。
+更に、英語の種類もアメリカ英語やイギリス英語に限らず、豊富な種類をご用意しました。近年はWorld Englishesの考えが広まっているため、非ネイティブ以外の豊富な種類の英語に触れることは非常に重要です。
+
+
+#### 背景音（BGM）の推奨ソース
+教材に臨場感を出すための環境音は、以下のサイトから「カフェ」や「教室」の音をダウンロードして使用するのがおすすめです。
+
+効果音ラボ: 「生活音」カテゴリに教室や喫茶店の音があります。
+
+OtoLogic: 「環境音」カテゴリが充実しています。
+
+
+## まとめ
+いかがでしたか？まだまだ粗いところが多くありますが、AIの読み上げを可能な限りリアルな英語発話に近づけたいという思いを少しは形にできたと感じます。
+
+今後は、モノローグに限らず、2人以上の人が話すダイアローグ形式にも対応できるようにツールの開発を進めていきたいと思います。
+
+使ってみての感想、ご要望等ございましたら、コメントでお知らせください。
