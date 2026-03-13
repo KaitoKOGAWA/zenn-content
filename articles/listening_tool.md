@@ -15,6 +15,8 @@ um や well など、「フィラー」を入力するだけで、AIがリアル
 Tips: > リスニング試験の選択肢文など、淀みなく提示したい場合は、本来の英文法で必要なカンマであっても、あえて「**削除**」して入力するのがコツです。
 
 
+
+
 ② **発話速度の最適化**
 「初級」から「超上級」まで、ボタンひとつでリスニング評価に最適な発話速度を調整可能です。
 
@@ -32,6 +34,7 @@ Tips: > リスニング試験の選択肢文など、淀みなく提示したい
 ③保存したファイルをブラウザ（Google Chrome推奨）で開けば、即座に使用可能です。
 
 ```
+HTML
 <!DOCTYPE html><html lang="ja"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
