@@ -1,5 +1,5 @@
 ---
-title: "AIで自然な英語リスニング教材を作る"
+title: "【HTML/JS】AIの英語読み上げを更にナチュラルに。Web Speech APIを応用した英語リスニング教材スタジオ"
 emoji: "🎧"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["SLA", "英語教育", "javascript", "教材作成", "音声合成","教育","AI"]
