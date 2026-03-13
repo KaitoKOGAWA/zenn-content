@@ -362,7 +362,7 @@ Hello, everyone. Um, today I want to talk about our school festival. We have a l
 
 **背景の雑音（環境音）→「騒がしい高校の教室.mp3」（効果音ラボより）**
 
-<audio controls src=https://github.com/KaitoKOGAWA/audio/blob/main/listening.demo.webm>
+<audio controls src=https://github.com/KaitoKOGAWA/audio/blob/main/listening.demo.webm></audio>
 
 ## まとめ
 いかがでしたか？まだまだ粗いところが多くありますが、AIの読み上げを可能な限りリアルな英語発話に近づけたいという思いを少しは形にできたと感じます。
