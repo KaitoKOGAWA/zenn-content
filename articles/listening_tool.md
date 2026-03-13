@@ -1,3 +1,11 @@
+---
+title: "AIで自然な英語リスニング教材を作る"
+emoji: "🎧"
+type: "tech" # tech: 技術記事 / idea: アイデア
+topics: ["SLA", "英語教育", "javascript", "教材作成", "音声合成","教育","AI"]
+published: true
+---
+
 ## 開発の意図：AIの不自然な読み上げを卒業する
 リーディングテキストをリスニング教材にする際に用いられるTTS（Text-to-Speech）は、実際のコミュニケーションで発生する「言い淀み（Fillers）」や「ため（Pauses）」が欠如しがちです。
 
@@ -31,7 +39,7 @@ Tips: > リスニング試験の選択肢文など、淀みなく提示したい
 
 ③保存したファイルをブラウザ（Google Chrome推奨）で開けば、即座に使用可能です。
 
-```
+```html
 <!DOCTYPE html><html lang="ja"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -322,7 +330,7 @@ Tips: > リスニング試験の選択肢文など、淀みなく提示したい
 
 #### 練習用テキスト
 ツールの動作確認のために、よろしければ以下のテキストをコピペしてお使いください。
-```
+```text
 Hello, everyone. Um, today I want to talk about our school festival. We have a lot of ideas, but, well, we haven't decided what to do yet. I was thinking about a cafe, but, you know, it might be too much work. Uh, maybe we can do a haunted house instead. It's, like, really popular every year. Umm, but we need a lot of materials for that. Actually, I have some cardboard boxes at home. So, I mean, we just need to buy some paint. Let me see, what else do we need?
 ```
 
